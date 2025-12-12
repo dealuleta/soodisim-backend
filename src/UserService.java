@@ -12,7 +12,7 @@ public class UserService {
         int current = UserData.userPoints.getOrDefault(username, 0);
         UserData.userPoints.put(username, current + points);
     }
-
+//Funksioni getusertotalpoints(), Ersi
     public static int getUserTotalPoints(String username) {
         if (username == null || username.isBlank()) {
             return 0;
