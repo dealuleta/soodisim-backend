@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class UserService {
-
+//Funksioni addPoints ,Ergisa
     public static void addPoints(String username, int points) {
         if (username == null || username.isBlank() || points <= 0) {
             return;

@@ -11,8 +11,8 @@ public class Main {
         System.out.println("---- Test Erla (visitedByUser) ----");
         System.out.println("A e ka vizituar Erla Beratin? " +
                 UserService.visitedByUser("erla", "Berat"));
-        System.out.println("A e ka vizituar Ergisa Thethin? " +
-                UserService.visitedByUser("ergisa", "Theth"));
+        System.out.println("A e ka vizituar Ergisa Gjirokastrën? " +
+                UserService.visitedByUser("ergisa", "Gjirokastër"));
         System.out.println();
 
         // calculateRewardDiscount me piket ekzistuese
