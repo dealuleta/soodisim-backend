@@ -1,6 +1,23 @@
 import java.util.List;
 
 public class UserService {
+    //Funksioni qe llogarit zbritjet perkatese , dea
+    public static String calculateRewardDiscount(String username) {
+        int total = UserService.getUserTotalPoints(username);
+
+        if (total == 111) {
+            UserData.userPoints.put(username.toLowerCase(), 0);
+            return "Urime! Ju keni fituar 50% zbritje, si dhe produkte FALAS të përzgjedhura (pikët aktuale pas përdorimit të ofertës: 0)";
+        }
+
+        if (total < 20) return "0%";
+        if (total < 50) return "5%";
+        if (total < 80) return "10%";
+        if (total < 100) return "15%";
+
+        return "15%";
+    }
+
 //Funksioni addPoints ,Ergisa
     public static void addPoints(String username, int points) {
         if (username == null || username.isBlank() || points <= 0) {
@@ -22,7 +39,7 @@ public class UserService {
 
         return UserData.userPoints.getOrDefault(username, 0);
     }
-
+    //Funksioni nese nje perdoreues ka vizituar nje qytet apo jo , erla
     public static boolean visitedByUser(String username, String destinationName) {
         if (username == null || destinationName == null) {
             return false;
@@ -41,19 +58,4 @@ public class UserService {
         return false;
     }
 
-    public static String calculateRewardDiscount(String username) {
-        int total = UserService.getUserTotalPoints(username);
-
-        if (total == 111) {
-            UserData.userPoints.put(username.toLowerCase(), 0);
-            return "Urime! Ju keni fituar 50% zbritje, si dhe produkte FALAS të përzgjedhura (pikët aktuale pas përdorimit të ofertës: 0)";
-        }
-
-        if (total < 20) return "0%";
-        if (total < 50) return "5%";
-        if (total < 80) return "10%";
-        if (total < 100) return "15%";
-
-        return "15%";
-    }
 }

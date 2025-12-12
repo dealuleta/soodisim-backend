@@ -1,20 +1,22 @@
 public class Main {
     public static void main(String[] args) {
         //addPoints
-        System.out.println("---- Test Dea (addPoints + getUserTotalPoints) ----");
+        System.out.println("---- Test  (addPoints + getUserTotalPoints) ----");
         System.out.println("Pikët fillestare të Dea-s: " + UserService.getUserTotalPoints("dea"));
         UserService.addPoints("dea", 10); // Dea merr +10 pikë
         System.out.println("Pikët pas shtimit për Dea: " + UserService.getUserTotalPoints("dea"));
         System.out.println();
 
         // visitedByUser
-        System.out.println("---- Test Erla (visitedByUser) ----");
+        System.out.println("---- Test  (visitedByUser) ----");
         System.out.println("A e ka vizituar Erla Beratin? " +
                 UserService.visitedByUser("erla", "Berat"));
         System.out.println("A e ka vizituar Ergisa Gjirokastrën? "+
                 UserService.visitedByUser("ergisa", "Gjirokastër"));
         System.out.println("A e ka vizituar Ersi Thethin? "+
                 UserService.visitedByUser("ersi", "Theth"));
+        System.out.println("A e ka vizituar Dea Valbonën? "+
+                UserService.visitedByUser("dea", "Valbonë"));
         System.out.println();
 
 
