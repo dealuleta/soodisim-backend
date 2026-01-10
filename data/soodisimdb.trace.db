@@ -654,6 +654,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/User/Id
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
 	... 147 more
+<<<<<<< HEAD
 2026-01-08 21:13:27.790021+01:00 database: flush
 org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: /Users/dealuleta/Desktop/algoritmike/demo-soodisim/data/soodisimdb.mv.db [2.4.240/7]" [50000-240]
 	at org.h2.message.DbException.get(DbException.java:212)
@@ -982,3 +983,8 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /Users/dealuleta
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
 	... 147 more
+=======
+2026-01-10 10:57:41.689581+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select * [*]fom users"; SQL statement:
+select * fom users [42000-240]
+>>>>>>> c3ed552 (last touches + database fix)

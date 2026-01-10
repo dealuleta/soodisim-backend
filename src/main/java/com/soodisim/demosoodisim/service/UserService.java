@@ -19,11 +19,14 @@ public class UserService {
 
     // CREATE USER (REGISTER)
     public User createUser(User user) {
-        if (user.getRole() == null) {
-            user.setRole(RoleType.NORMAL);
-        }
+
+        // Always override untrusted values
+        user.setPoints(0);
+        user.setRole(RoleType.NORMAL);
+
         return userRepository.save(user);
     }
+
 
     // GET ALL USERS
     public List<User> getAllUsers() {
@@ -52,4 +55,5 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
 }

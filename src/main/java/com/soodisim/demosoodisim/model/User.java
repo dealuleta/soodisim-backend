@@ -1,6 +1,11 @@
 package com.soodisim.demosoodisim.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import com.soodisim.demosoodisim.model.RoleType;
+
 
 @Entity
 @Table(name = "users")
@@ -10,21 +15,34 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
+    @NotBlank(message = "Name is required")
     private String name;
+
+    @Email(message = "Email must be valid")
+    @NotBlank(message = "Email is required")
     private String email;
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 3, message = "Password must have at least 3 characters")
     private String password;
+
+    @NotBlank(message = "Phone number is required")
     private String phoneNumber;
+
+    @NotBlank(message = "Preferred language is required")
     private String preferredLanguage;
 
     @Enumerated(EnumType.STRING)
     private RoleType role;
 
     private int points;
+    public RoleType getRole() {
+        return role;
+    }
 
-    public User() {}
-
-    // GETTERS & SETTERS
-
+    public void setRole(RoleType role) {
+        this.role = role;
+    }
     public Long getUserId() {
         return userId;
     }
@@ -73,14 +91,6 @@ public class User {
         this.preferredLanguage = preferredLanguage;
     }
 
-    public RoleType getRole() {
-        return role;
-    }
-
-    public void setRole(RoleType role) {
-        this.role = role;
-    }
-
     public int getPoints() {
         return points;
     }
@@ -88,4 +98,6 @@ public class User {
     public void setPoints(int points) {
         this.points = points;
     }
+
 }
+
